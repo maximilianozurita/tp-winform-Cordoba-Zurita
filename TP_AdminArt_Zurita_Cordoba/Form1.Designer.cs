@@ -1,7 +1,7 @@
 ﻿
 namespace TP_AdminArt_Zurita_Cordoba
 {
-    partial class Form1
+    partial class Form1Articulos
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,33 +29,52 @@ namespace TP_AdminArt_Zurita_Cordoba
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.dgvArticulos = new System.Windows.Forms.DataGridView();
+            this.pBoxArticulo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // dgvArticulos
             // 
-            this.button1.Location = new System.Drawing.Point(31, 390);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulos.Location = new System.Drawing.Point(0, 0);
+            this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.RowHeadersWidth = 51;
+            this.dgvArticulos.RowTemplate.Height = 24;
+            this.dgvArticulos.Size = new System.Drawing.Size(788, 150);
+            this.dgvArticulos.TabIndex = 0;
+            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
-            // Form1
+            // pBoxArticulo
+            // 
+            this.pBoxArticulo.Location = new System.Drawing.Point(0, 156);
+            this.pBoxArticulo.Name = "pBoxArticulo";
+            this.pBoxArticulo.Size = new System.Drawing.Size(607, 254);
+            this.pBoxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBoxArticulo.TabIndex = 1;
+            this.pBoxArticulo.TabStop = false;
+            // 
+            // Form1Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 450);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pBoxArticulo);
+            this.Controls.Add(this.dgvArticulos);
+            this.Name = "Form1Articulos";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1Articulos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxArticulo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvArticulos;
+        private System.Windows.Forms.PictureBox pBoxArticulo;
     }
 }
 

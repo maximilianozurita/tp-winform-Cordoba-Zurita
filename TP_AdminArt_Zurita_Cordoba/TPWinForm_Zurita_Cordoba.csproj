@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Articulo.cs" />
+    <Compile Include="ArticuloEvent.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

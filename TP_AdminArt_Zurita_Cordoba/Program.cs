@@ -16,7 +16,7 @@ namespace TP_AdminArt_Zurita_Cordoba
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1Articulos());
         }
     }
 }
