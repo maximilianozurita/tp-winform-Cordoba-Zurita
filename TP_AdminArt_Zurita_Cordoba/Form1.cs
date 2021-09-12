@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
+using eventos;
 
 namespace TP_AdminArt_Zurita_Cordoba
 {
@@ -23,6 +25,9 @@ namespace TP_AdminArt_Zurita_Cordoba
             ArticuloEvent evento = new ArticuloEvent();
             ListaArticulos = evento.listar();
             dgvArticulos.DataSource = ListaArticulos;
+            
+            dgvArticulos.Columns["Imagen"].Visible = false;
+
            CargarImagen(ListaArticulos[0].Imagen);
 
 
@@ -32,10 +37,11 @@ namespace TP_AdminArt_Zurita_Cordoba
         {
             Articulo Seleccionado=(Articulo)dgvArticulos.CurrentRow.DataBoundItem;
            CargarImagen(Seleccionado.Imagen);
+          
         }
 
         private void CargarImagen(string Imagen) 
-        {
+        { 
             try
             {
                 pBoxArticulo.Load(Imagen);

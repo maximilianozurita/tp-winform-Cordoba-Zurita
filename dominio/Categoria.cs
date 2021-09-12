@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_AdminArt_Zurita_Cordoba
+namespace dominio
 {
-    class Marca
+    public class Categoria
     {
-        public int IdM { get; set; }
+        public int ID { get; set; }
         public string Descripcion { get; set; }
+
     }
 }
