@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using dominio;
 
-namespace TP_AdminArt_Zurita_Cordoba
+namespace eventos
 {
-	class ArticuloEvent
+	public class ArticuloEvent
 	{
 		public List<Articulo> listar()
 		{
@@ -19,7 +20,7 @@ namespace TP_AdminArt_Zurita_Cordoba
 			{
 				conexion.ConnectionString = "server=.\\SQLEXPRESS;database=CATALOGO_DB; integrated security=true";
 				comando.CommandType = System.Data.CommandType.Text;
-				comando.CommandText = "select Codigo, Nombre,Descripcion,ImagenUrl from ARTICULOS";
+				comando.CommandText = "Select Codigo, Nombre,A.Descripcion,ImagenUrl,M.Descripcion Marca From ARTICULOS A, MARCAS M where M.Id=A.Id";
 				comando.Connection=conexion;
 				
 				conexion.Open();
@@ -32,7 +33,8 @@ namespace TP_AdminArt_Zurita_Cordoba
 					aux.Nombre = (string) lector ["Nombre"] ;
 					aux.Descripción= (string) lector["Descripcion"];
 					aux.Imagen = (string)lector["ImagenUrl"];
-
+					aux.Marca = new Marca();
+					aux.Marca.Descripcion = (string)lector["Marca"];
 					lista.Add(aux);
 
                 }
