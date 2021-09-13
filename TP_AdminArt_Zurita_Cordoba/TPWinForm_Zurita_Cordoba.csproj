@@ -115,9 +115,9 @@
       <Project>{84812844-7c41-4258-8b43-c6c86d5a028f}</Project>
       <Name>dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\eventos\eventos.csproj">
+    <ProjectReference Include="..\eventos\negocio.csproj">
       <Project>{1a6ba32c-2492-416a-85f3-ba8fa0d30530}</Project>
-      <Name>eventos</Name>
+      <Name>negocio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

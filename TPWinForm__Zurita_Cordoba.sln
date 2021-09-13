@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPWinForm_Zurita_Cordoba", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.csproj", "{84812844-7C41-4258-8B43-C6C86D5A028F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eventos", "eventos\eventos.csproj", "{1A6BA32C-2492-416A-85F3-BA8FA0D30530}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocio", "eventos\negocio.csproj", "{1A6BA32C-2492-416A-85F3-BA8FA0D30530}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

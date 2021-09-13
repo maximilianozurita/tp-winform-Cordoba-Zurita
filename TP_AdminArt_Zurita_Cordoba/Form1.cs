@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
-using eventos;
+using negocio;
 
 namespace TP_AdminArt_Zurita_Cordoba
 {
@@ -22,7 +22,7 @@ namespace TP_AdminArt_Zurita_Cordoba
 
         private void Form1Articulos_Load(object sender, EventArgs e)
         {
-            ArticuloEvent evento = new ArticuloEvent();
+            ArticuloNegocio evento = new ArticuloNegocio();
             ListaArticulos = evento.listar();
             dgvArticulos.DataSource = ListaArticulos;
             
@@ -47,7 +47,7 @@ namespace TP_AdminArt_Zurita_Cordoba
                 pBoxArticulo.Load(Imagen);
                  
             }
-            catch (Exception ex)
+            catch
             {
 
                 pBoxArticulo.Load("http://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif");
