@@ -14,20 +14,11 @@ namespace negocio
 		{
 			List<Articulo> lista = new List<Articulo>();
 			AccesoDatos datos = new AccesoDatos();
-			/*SqlConnection conexion = new SqlConnection();
-			SqlCommand comando = new SqlCommand();
-			SqlDataReader lector;*/
+
 			try
 			{
-				datos.SetearConsulta("Select Codigo, Nombre,A.Descripcion,ImagenUrl,M.Descripcion Marca From ARTICULOS A, MARCAS M where M.Id=A.Id");
+				datos.SetearConsulta("Select Codigo, Nombre,A.Descripcion,ImagenUrl,M.Descripcion as Marcas,C.Descripcion as Categorias, Precio From ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdMarca=M.Id and A.IdCategoria=C.Id");
 				datos.EjecutarLectura();
-				/*conexion.ConnectionString = "server=.\\SQLEXPRESS;database=CATALOGO_DB; integrated security=true";
-				comando.CommandType = System.Data.CommandType.Text;
-				comando.CommandText = "Select Codigo, Nombre,A.Descripcion,ImagenUrl,M.Descripcion Marca From ARTICULOS A, MARCAS M where M.Id=A.Id";
-				comando.Connection=conexion;
-				conexion.Open();
-				lector = comando.ExecuteReader();*/
-
 				while (datos.Lector.Read())
 				{
 					Articulo aux = new Articulo();
@@ -35,13 +26,18 @@ namespace negocio
 					aux.Nombre = (string)  datos.Lector ["Nombre"] ;
 					aux.Descripción= (string) datos.Lector["Descripcion"];
 					aux.Imagen = (string) datos.Lector["ImagenUrl"];
-					aux.Marca = new Marca();
-					aux.Marca.Descripcion = (string) datos.Lector["Marca"];
+                    aux.Marca = new Marca
+                    {
+                        Descripcion = (string)datos.Lector["Marcas"]
+                    };
+                    aux.Categoria = new Categoria
+                    {
+                        Descripcion = (string)datos.Lector["Categorias"]
+                    };
+                    //aux.Precio = (float)datos.Lector["Precio"];
+
 					lista.Add(aux);
                 }
-
-
-
 				//conexion.Close();
 					return lista;
 
@@ -55,7 +51,31 @@ namespace negocio
             {
 				datos.CerrarConexion();
             }
+
+
 		}
-    }
+		public void Agregar(Articulo nuevo)
+        {
+			AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+				datos.SetearConsulta("insert into dbo.ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) values('" + nuevo.CodigoArticulo + "', '"+ nuevo.Nombre +"', ' "+  nuevo.Descripción +"', @idMarca , @IdCategoria, 'agregarURL', "+ 1234 + ")");
+				datos.setearParametros("@IdMarca", nuevo.Marca.ID);
+				datos.setearParametros("@IdCategoria", nuevo.Categoria.ID);
+				datos.EjecutarAccion();
+            }
+			catch (Exception ex)
+            {
+				throw ex;
+            }
+            finally
+            {
+				datos.CerrarConexion();
+            }
+        }
+	}
+
+
 
 }

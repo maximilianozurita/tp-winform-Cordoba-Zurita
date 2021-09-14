@@ -10,6 +10,8 @@ namespace dominio
     {
         public int IdM { get; set; }
         public string Descripcion { get; set; }
+        public int ID { get; set; }
+
         public override string ToString()
         {
             return Descripcion;

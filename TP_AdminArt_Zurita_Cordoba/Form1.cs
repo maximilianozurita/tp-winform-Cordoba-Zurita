@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using TPWinForm_Zurita_Cordoba;
 
 namespace TP_AdminArt_Zurita_Cordoba
 {
@@ -52,6 +53,12 @@ namespace TP_AdminArt_Zurita_Cordoba
 
                 pBoxArticulo.Load("http://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif");
             }
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAltaArticulo Alta = new frmAltaArticulo();
+            Alta.ShowDialog();
         }
     }
 }
