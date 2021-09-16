@@ -15,22 +15,32 @@ namespace TP_AdminArt_Zurita_Cordoba
 {
     public partial class Form1Articulos : Form
     {
-        List<Articulo> ListaArticulos;
         public Form1Articulos()
         {
             InitializeComponent();
         }
 
+        List<Articulo> ListaArticulos;
+
         private void Form1Articulos_Load(object sender, EventArgs e)
         {
             ArticuloNegocio evento = new ArticuloNegocio();
-            ListaArticulos = evento.listar();
-            dgvArticulos.DataSource = ListaArticulos;
-            
-            dgvArticulos.Columns["Imagen"].Visible = false;
+            try
+           {
+                ListaArticulos = evento.listar();
 
-           CargarImagen(ListaArticulos[0].Imagen);
+                dgvArticulos.DataSource = ListaArticulos;
 
+                dgvArticulos.Columns["Imagen"].Visible = false;
+
+                CargarImagen(ListaArticulos[0].Imagen);
+
+           }
+           catch (Exception ex)
+           {
+
+               MessageBox.Show(ex.ToString());
+           }
 
         }
 

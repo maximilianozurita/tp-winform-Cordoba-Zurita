@@ -36,7 +36,7 @@ namespace TPWinForm_Zurita_Cordoba
                 art.Descripción = txtDescripcion.Text;
                 art.Marca = (Marca)cboMarcas.SelectedItem;
                 art.Categoria = (Categoria)cboCategoria.SelectedItem;
-                art.Precio = float.Parse(txtPrecio.Text);
+                art.Precio = (float) decimal.Parse(txtPrecio.Text);
 
                 artNegocio.Agregar(art);
                 MessageBox.Show("Agregado exitosamente");

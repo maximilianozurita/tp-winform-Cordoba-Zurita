@@ -22,19 +22,27 @@ namespace negocio
 				while (datos.Lector.Read())
 				{
 					Articulo aux = new Articulo();
-					aux.CodigoArticulo = (string) datos.Lector["Codigo"];
-					aux.Nombre = (string)  datos.Lector ["Nombre"] ;
-					aux.Descripción= (string) datos.Lector["Descripcion"];
-					aux.Imagen = (string) datos.Lector["ImagenUrl"];
-                    aux.Marca = new Marca
-                    {
-                        Descripcion = (string)datos.Lector["Marcas"]
+					aux.CodigoArticulo = (string)datos.Lector["Codigo"];
+					aux.Nombre = (string)datos.Lector["Nombre"];
+					aux.Descripción = (string)datos.Lector["Descripcion"];
+
+					if (!(datos.Lector.IsDBNull(datos.Lector.GetOrdinal("ImagenUrl"))))
+					//if (!(datos.Lector["Imagen"] is DBNull))
+					
+						aux.Imagen = (string)datos.Lector["ImagenUrl"]; 
+					
+					
+					
+					aux.Marca= new Marca
+                   {
+						Descripcion = (string)datos.Lector["Marcas"]
                     };
                     aux.Categoria = new Categoria
                     {
                         Descripcion = (string)datos.Lector["Categorias"]
                     };
-                    //aux.Precio = (float)datos.Lector["Precio"];
+					if (!(datos.Lector["Precio"] is DBNull))
+					aux.Precio = (float)(decimal) datos.Lector["Precio"];
 
 					lista.Add(aux);
                 }
@@ -57,11 +65,11 @@ namespace negocio
 		public void Agregar(Articulo nuevo)
         {
 			AccesoDatos datos = new AccesoDatos();
-
+			
             try
             {
-				datos.SetearConsulta("insert into dbo.ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) values('" + nuevo.CodigoArticulo + "', '"+ nuevo.Nombre +"', ' "+  nuevo.Descripción +"', @idMarca , @IdCategoria, 'agregarURL', "+ 1234 + ")");
-				datos.setearParametros("@IdMarca", nuevo.Marca.ID);
+				datos.SetearConsulta("insert into dbo.ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria) values('" + nuevo.CodigoArticulo + "', '"+ nuevo.Nombre +"', ' "+  nuevo.Descripción +"', @idMarca , @IdCategoria)");
+				datos.setearParametros("@IdMarca",nuevo.Marca.ID);
 				datos.setearParametros("@IdCategoria", nuevo.Categoria.ID);
 				datos.EjecutarAccion();
             }

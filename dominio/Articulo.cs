@@ -14,7 +14,7 @@ namespace dominio
         public Marca Marca { get; set; }//(seleccionable de una lista desplegable).
         public Categoria Categoria { get; set; } // (seleccionable de una lista desplegable.
         public string Imagen { get; set; }
-        public float  Precio { get; set; }
+        public float Precio { get; set; }
        
     }
 
