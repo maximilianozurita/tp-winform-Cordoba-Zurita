@@ -24,7 +24,7 @@ namespace negocio
 					Articulo aux = new Articulo();
 					aux.CodigoArticulo = (string)datos.Lector["Codigo"];
 					aux.Nombre = (string)datos.Lector["Nombre"];
-					aux.Descripción = (string)datos.Lector["Descripcion"];
+					aux.Descripcion = (string)datos.Lector["Descripcion"];
 
 					if (!(datos.Lector.IsDBNull(datos.Lector.GetOrdinal("ImagenUrl"))))
 					//if (!(datos.Lector["Imagen"] is DBNull))
@@ -68,7 +68,7 @@ namespace negocio
 			
             try
             {
-				datos.SetearConsulta("insert into dbo.ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria,Precio,ImagenUrl) values('" + nuevo.CodigoArticulo + "', '" + nuevo.Nombre + "', ' " + nuevo.Descripción + "', @idMarca , @IdCategoria,'"+nuevo.Precio+"',@ImagenUrl); ");
+				datos.SetearConsulta("insert into dbo.ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria,Precio,ImagenUrl) values('" + nuevo.CodigoArticulo + "', '" + nuevo.Nombre + "', ' " + nuevo.Descripcion + "', @idMarca , @IdCategoria,'"+nuevo.Precio+"',@ImagenUrl); ");
 			  datos.setearParametros("@IdMarca",nuevo.Marca.ID);
 				datos.setearParametros("@IdCategoria", nuevo.Categoria.ID);
 				datos.setearParametros("@ImagenUrl", nuevo.Imagen);

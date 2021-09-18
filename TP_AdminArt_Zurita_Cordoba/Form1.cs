@@ -24,23 +24,7 @@ namespace TP_AdminArt_Zurita_Cordoba
 
         private void Form1Articulos_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio evento = new ArticuloNegocio();
-            try
-           {
-                ListaArticulos = evento.listar();
-
-                dgvArticulos.DataSource = ListaArticulos;
-
-                dgvArticulos.Columns["Imagen"].Visible = false;
-
-                CargarImagen(ListaArticulos[0].Imagen);
-
-           }
-           catch (Exception ex)
-           {
-
-               MessageBox.Show(ex.ToString());
-           }
+            Cargar();
 
         }
 
@@ -49,6 +33,27 @@ namespace TP_AdminArt_Zurita_Cordoba
             Articulo Seleccionado=(Articulo)dgvArticulos.CurrentRow.DataBoundItem;
            CargarImagen(Seleccionado.Imagen);
           
+        }
+
+        private void Cargar()
+        {
+            ArticuloNegocio evento = new ArticuloNegocio();
+            try
+            {
+                ListaArticulos = evento.listar();
+
+                dgvArticulos.DataSource = ListaArticulos;
+
+                dgvArticulos.Columns["Imagen"].Visible = false;
+
+                CargarImagen(ListaArticulos[0].Imagen);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void CargarImagen(string Imagen) 
@@ -76,6 +81,7 @@ namespace TP_AdminArt_Zurita_Cordoba
         {
             FrmModificar Alta = new FrmModificar();
             Alta.ShowDialog();
+            Cargar();
         }
     }
 }

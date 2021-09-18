@@ -42,32 +42,31 @@ namespace TP_AdminArt_Zurita_Cordoba
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.Location = new System.Drawing.Point(0, 0);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.RowTemplate.Height = 24;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(895, 150);
+            this.dgvArticulos.Size = new System.Drawing.Size(704, 402);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // pBoxArticulo
             // 
-            this.pBoxArticulo.Location = new System.Drawing.Point(155, 153);
-            this.pBoxArticulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pBoxArticulo.Location = new System.Drawing.Point(719, 0);
+            this.pBoxArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pBoxArticulo.Name = "pBoxArticulo";
-            this.pBoxArticulo.Size = new System.Drawing.Size(669, 363);
+            this.pBoxArticulo.Size = new System.Drawing.Size(511, 402);
             this.pBoxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBoxArticulo.TabIndex = 1;
             this.pBoxArticulo.TabStop = false;
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(259, 522);
-            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnAgregar.Location = new System.Drawing.Point(194, 424);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(100, 28);
+            this.BtnAgregar.Size = new System.Drawing.Size(75, 23);
             this.BtnAgregar.TabIndex = 2;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
@@ -75,9 +74,10 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(524, 525);
+            this.btnModificar.Location = new System.Drawing.Point(393, 427);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(117, 23);
+            this.btnModificar.Size = new System.Drawing.Size(88, 19);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modifcar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -85,14 +85,14 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             // Form1Articulos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 569);
+            this.ClientSize = new System.Drawing.Size(1332, 461);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.pBoxArticulo);
             this.Controls.Add(this.dgvArticulos);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1Articulos";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1Articulos_Load);

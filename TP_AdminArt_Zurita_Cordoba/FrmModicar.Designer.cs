@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace TPWinForm_Zurita_Cordoba
 {
     partial class FrmModificar
@@ -225,6 +227,11 @@ namespace TPWinForm_Zurita_Cordoba
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void FrmModificar_Load(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

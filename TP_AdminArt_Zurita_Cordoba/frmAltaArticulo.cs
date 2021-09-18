@@ -33,7 +33,7 @@ namespace TPWinForm_Zurita_Cordoba
             {
                 art.Nombre = txtNombre.Text;
                 art.CodigoArticulo = txtCodigo.Text;
-                art.Descripción = txtDescripcion.Text;
+                art.Descripcion = txtDescripcion.Text;
                 art.Imagen = txtBUrlImagen.Text;
                 art.Marca = (Marca)cboMarcas.SelectedItem;
                 art.Categoria = (Categoria)cboCategoria.SelectedItem;
