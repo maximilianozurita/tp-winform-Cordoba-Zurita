@@ -14,9 +14,16 @@ namespace TPWinForm_Zurita_Cordoba
 {
     public partial class frmAltaArticulo : Form
     {
+        private Articulo art = null;
         public frmAltaArticulo()
         {
             InitializeComponent();
+        }
+
+        public frmAltaArticulo(Articulo art)
+        {
+            InitializeComponent();
+            this.art = art;
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -57,7 +64,25 @@ namespace TPWinForm_Zurita_Cordoba
             try
             {
                 cboMarcas.DataSource = MarcaNegocio.Listar();
+                cboMarcas.ValueMember = "ID";
+                cboMarcas.DisplayMember = "Descripcion";
+
                 cboCategoria.DataSource = CatNegocio.Listar();
+                cboCategoria.ValueMember = "ID";
+                cboCategoria.DisplayMember = "Descripcion";
+
+                if (art != null)
+                {
+                    txtDescripcion.Text = art.Descripcion;
+                    txtNombre.Text= art.Nombre;
+                    txtDescripcion.Text = art.Descripcion;
+                    txtBUrlImagen.Text = art.Imagen;
+                    CargarImagen(art.Imagen);
+                    txtPrecio.Text = art.Precio.ToString();
+                    cboMarcas.SelectedValue = art.Marca.ID;
+                    cboCategoria.SelectedValue = art.Categoria.ID;
+                }
+
             }
             catch (Exception ex)
             {

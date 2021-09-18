@@ -17,7 +17,7 @@ namespace negocio
 
 			try
 			{
-				datos.SetearConsulta("Select Codigo, Nombre,A.Descripcion,ImagenUrl,M.Descripcion as Marcas,C.Descripcion as Categorias, Precio From ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdMarca=M.Id and A.IdCategoria=C.Id");
+				datos.SetearConsulta("Select Codigo, Nombre,A.Descripcion,ImagenUrl,M.Descripcion as Marcas,C.Descripcion as Categorias, Precio, A.IdMarca, A.IdCategoria From ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdMarca=M.Id and A.IdCategoria=C.Id");
 				datos.EjecutarLectura();
 				while (datos.Lector.Read())
 				{
@@ -31,16 +31,18 @@ namespace negocio
 					
 						aux.Imagen = (string)datos.Lector["ImagenUrl"]; 
 					
-					
-					
 					aux.Marca= new Marca
                    {
 						Descripcion = (string)datos.Lector["Marcas"]
                     };
+					aux.Marca.ID= (int)datos.Lector["IdMarca"];
+
                     aux.Categoria = new Categoria
-                    {
+					{
                         Descripcion = (string)datos.Lector["Categorias"]
                     };
+					aux.Categoria.ID = (int)datos.Lector["IdCategoria"];
+
 					if (!(datos.Lector["Precio"] is DBNull))
 					aux.Precio = (float)(decimal) datos.Lector["Precio"];
 

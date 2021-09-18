@@ -79,7 +79,10 @@ namespace TP_AdminArt_Zurita_Cordoba
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            FrmModificar Alta = new FrmModificar();
+
+            Articulo Seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            frmAltaArticulo Alta = new frmAltaArticulo(Seleccionado);
             Alta.ShowDialog();
             Cargar();
         }
