@@ -24,7 +24,7 @@ namespace negocio
 						aux.ID = (int)datos.Lector["id"];
 						aux.Descripcion = (string)datos.Lector["Descripcion"];
 
-						lista.Add(aux);
+						if(aux.ID<5)lista.Add(aux);
 					}
 		
 					return lista;

@@ -68,9 +68,10 @@ namespace negocio
 			
             try
             {
-				datos.SetearConsulta("insert into dbo.ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria) values('" + nuevo.CodigoArticulo + "', '"+ nuevo.Nombre +"', ' "+  nuevo.Descripción +"', @idMarca , @IdCategoria)");
-				datos.setearParametros("@IdMarca",nuevo.Marca.ID);
+				datos.SetearConsulta("insert into dbo.ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria,Precio,ImagenUrl) values('" + nuevo.CodigoArticulo + "', '" + nuevo.Nombre + "', ' " + nuevo.Descripción + "', @idMarca , @IdCategoria,'"+nuevo.Precio+"',@ImagenUrl); ");
+			  datos.setearParametros("@IdMarca",nuevo.Marca.ID);
 				datos.setearParametros("@IdCategoria", nuevo.Categoria.ID);
+				datos.setearParametros("@ImagenUrl", nuevo.Imagen);
 				datos.EjecutarAccion();
             }
 			catch (Exception ex)
@@ -81,6 +82,10 @@ namespace negocio
             {
 				datos.CerrarConexion();
             }
+        }
+		public void Modificar(Articulo nuevo)
+        {
+
         }
 	}
 

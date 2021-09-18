@@ -69,6 +69,13 @@ namespace TP_AdminArt_Zurita_Cordoba
         {
             frmAltaArticulo Alta = new frmAltaArticulo();
             Alta.ShowDialog();
+         
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            FrmModificar Alta = new FrmModificar();
+            Alta.ShowDialog();
         }
     }
 }

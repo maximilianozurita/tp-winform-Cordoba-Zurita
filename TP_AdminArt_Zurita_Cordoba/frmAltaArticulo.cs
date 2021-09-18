@@ -34,6 +34,7 @@ namespace TPWinForm_Zurita_Cordoba
                 art.Nombre = txtNombre.Text;
                 art.CodigoArticulo = txtCodigo.Text;
                 art.Descripción = txtDescripcion.Text;
+                art.Imagen = txtBUrlImagen.Text;
                 art.Marca = (Marca)cboMarcas.SelectedItem;
                 art.Categoria = (Categoria)cboCategoria.SelectedItem;
                 art.Precio = (float) decimal.Parse(txtPrecio.Text);
@@ -61,6 +62,24 @@ namespace TPWinForm_Zurita_Cordoba
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtBUrlImagen_Leave(object sender, EventArgs e)
+        {
+            CargarImagen(txtBUrlImagen.Text);
+        }
+        private void CargarImagen(string Imagen)
+        {
+            try
+            {
+                pBoxArticulo.Load(Imagen);
+
+            }
+            catch
+            {
+
+                pBoxArticulo.Load("http://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif");
             }
         }
     }

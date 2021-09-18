@@ -13,7 +13,7 @@ namespace dominio
         public string Descripción { get; set; }
         public Marca Marca { get; set; }//(seleccionable de una lista desplegable).
         public Categoria Categoria { get; set; } // (seleccionable de una lista desplegable.
-        public string Imagen { get; set; }
+        public string Imagen { get; set; }//url
         public float Precio { get; set; }
        
     }
