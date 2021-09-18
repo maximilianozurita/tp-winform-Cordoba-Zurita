@@ -17,11 +17,12 @@ namespace negocio
 
 			try
 			{
-				datos.SetearConsulta("Select Codigo, Nombre,A.Descripcion,ImagenUrl,M.Descripcion as Marcas,C.Descripcion as Categorias, Precio, A.IdMarca, A.IdCategoria From ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdMarca=M.Id and A.IdCategoria=C.Id");
+				datos.SetearConsulta("Select Codigo, Nombre,A.Descripcion,ImagenUrl,M.Descripcion as Marcas,C.Descripcion as Categorias, Precio, A.IdMarca, A.IdCategoria, A.Id From ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdMarca=M.Id and A.IdCategoria=C.Id");
 				datos.EjecutarLectura();
 				while (datos.Lector.Read())
 				{
 					Articulo aux = new Articulo();
+					aux.ID = (int)datos.Lector["Id"];
 					aux.CodigoArticulo = (string)datos.Lector["Codigo"];
 					aux.Nombre = (string)datos.Lector["Nombre"];
 					aux.Descripcion = (string)datos.Lector["Descripcion"];
@@ -85,9 +86,31 @@ namespace negocio
 				datos.CerrarConexion();
             }
         }
-		public void Modificar(Articulo nuevo)
+		public void Modificar(Articulo Modificar)
         {
+			AccesoDatos datos = new AccesoDatos();
+            try
+            {
+				datos.SetearConsulta("UPDATE ARTICULOS SET Codigo=@Codigo, Nombre=@Nombre, Descripcion=@Descripcion,IdMarca=@IdMarca,IdCategoria=@IdCategoria,ImagenUrl=@ImagenUrl,Precio=@Precio WHERE Id=@Id");
+				datos.setearParametros("@Codigo", Modificar.CodigoArticulo);
+				datos.setearParametros("@Nombre", Modificar.Nombre);
+				datos.setearParametros("@Descripcion", Modificar.Descripcion);
+				datos.setearParametros("@IdMarca", Modificar.Marca.ID);
+				datos.setearParametros("@IdCategoria", Modificar.Categoria.ID);
+				datos.setearParametros("@ImagenUrl", Modificar.Imagen);
+				datos.setearParametros("@Precio", Modificar.Precio);
+				datos.setearParametros("@Id", Modificar.ID);
+				datos.EjecutarAccion();
 
+			}
+            catch (Exception ex)
+            {
+				throw ex;
+            }
+            finally
+            {
+				datos.CerrarConexion();
+            }
         }
 	}
 

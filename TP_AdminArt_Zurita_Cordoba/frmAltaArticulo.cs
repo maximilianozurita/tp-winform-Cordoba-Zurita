@@ -24,6 +24,7 @@ namespace TPWinForm_Zurita_Cordoba
         {
             InitializeComponent();
             this.art = art;
+            Text = "Modificar artículo";
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -33,11 +34,14 @@ namespace TPWinForm_Zurita_Cordoba
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            Articulo art = new Articulo();
             ArticuloNegocio artNegocio = new ArticuloNegocio();
 
             try
             {
+                if (art == null)
+                {
+                    Articulo art = new Articulo();
+                }
                 art.Nombre = txtNombre.Text;
                 art.CodigoArticulo = txtCodigo.Text;
                 art.Descripcion = txtDescripcion.Text;
@@ -45,10 +49,20 @@ namespace TPWinForm_Zurita_Cordoba
                 art.Marca = (Marca)cboMarcas.SelectedItem;
                 art.Categoria = (Categoria)cboCategoria.SelectedItem;
                 art.Precio = (float) decimal.Parse(txtPrecio.Text);
-
-                artNegocio.Agregar(art);
-                MessageBox.Show("Agregado exitosamente");
+                
+                
+                if (art.ID != 0)
+                {
+                    artNegocio.Modificar(art);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else
+                {
+                    artNegocio.Agregar(art);
+                    MessageBox.Show("Agregado exitosamente");
+                }
                 Close();
+
             }
             catch (Exception ex)
             {

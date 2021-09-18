@@ -45,6 +45,7 @@ namespace TP_AdminArt_Zurita_Cordoba
                 dgvArticulos.DataSource = ListaArticulos;
 
                 dgvArticulos.Columns["Imagen"].Visible = false;
+                dgvArticulos.Columns["ID"].Visible = false;
 
                 CargarImagen(ListaArticulos[0].Imagen);
 
@@ -74,7 +75,7 @@ namespace TP_AdminArt_Zurita_Cordoba
         {
             frmAltaArticulo Alta = new frmAltaArticulo();
             Alta.ShowDialog();
-         
+            Cargar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
