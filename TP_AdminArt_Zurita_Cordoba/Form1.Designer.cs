@@ -34,6 +34,8 @@ namespace TP_AdminArt_Zurita_Cordoba
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.brnEliminar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +46,8 @@ namespace TP_AdminArt_Zurita_Cordoba
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.Location = new System.Drawing.Point(0, 0);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvArticulos.Location = new System.Drawing.Point(9, 106);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
@@ -57,6 +61,8 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             this.pBoxArticulo.Location = new System.Drawing.Point(959, 0);
             this.pBoxArticulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pBoxArticulo.Location = new System.Drawing.Point(724, 106);
+            this.pBoxArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pBoxArticulo.Name = "pBoxArticulo";
             this.pBoxArticulo.Size = new System.Drawing.Size(681, 495);
             this.pBoxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -65,6 +71,7 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             // BtnAgregar
             // 
+            this.BtnAgregar.Location = new System.Drawing.Point(90, 526);
             this.BtnAgregar.Location = new System.Drawing.Point(64, 521);
             this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnAgregar.Name = "BtnAgregar";
@@ -78,6 +85,8 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             this.btnModificar.Location = new System.Drawing.Point(368, 523);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificar.Location = new System.Drawing.Point(315, 530);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(117, 23);
             this.btnModificar.TabIndex = 3;
@@ -89,6 +98,7 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             this.brnEliminar.Location = new System.Drawing.Point(687, 523);
             this.brnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.brnEliminar.Location = new System.Drawing.Point(520, 530);
             this.brnEliminar.Name = "brnEliminar";
             this.brnEliminar.Size = new System.Drawing.Size(100, 28);
             this.brnEliminar.TabIndex = 4;
@@ -96,16 +106,37 @@ namespace TP_AdminArt_Zurita_Cordoba
             this.brnEliminar.UseVisualStyleBackColor = true;
             this.brnEliminar.Click += new System.EventHandler(this.brnEliminar_Click);
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(139, 55);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(498, 20);
+            this.txtBuscar.TabIndex = 6;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(669, 55);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // Form1Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1332, 563);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBuscar);
             this.ClientSize = new System.Drawing.Size(1776, 567);
             this.Controls.Add(this.brnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.pBoxArticulo);
             this.Controls.Add(this.dgvArticulos);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1Articulos";
             this.Text = "Form1";
@@ -113,6 +144,7 @@ namespace TP_AdminArt_Zurita_Cordoba
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxArticulo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -123,6 +155,8 @@ namespace TP_AdminArt_Zurita_Cordoba
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button brnEliminar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
 
