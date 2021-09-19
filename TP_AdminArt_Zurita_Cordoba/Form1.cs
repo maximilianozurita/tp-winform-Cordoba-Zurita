@@ -45,6 +45,7 @@ namespace TP_AdminArt_Zurita_Cordoba
                 dgvArticulos.DataSource = ListaArticulos;
 
                 dgvArticulos.Columns["Imagen"].Visible = false;
+                dgvArticulos.Columns["ID"].Visible = false;
 
                 CargarImagen(ListaArticulos[0].Imagen);
 
@@ -74,7 +75,7 @@ namespace TP_AdminArt_Zurita_Cordoba
         {
             frmAltaArticulo Alta = new frmAltaArticulo();
             Alta.ShowDialog();
-         
+            Cargar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -85,6 +86,38 @@ namespace TP_AdminArt_Zurita_Cordoba
             frmAltaArticulo Alta = new frmAltaArticulo(Seleccionado);
             Alta.ShowDialog();
             Cargar();
+        }
+
+        private void brnEliminar_Click(object sender, EventArgs e)
+        {
+            Articulo Seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            ArticuloNegocio artNegocio = new ArticuloNegocio();
+
+            artNegocio.Eliminar(Seleccionado);
+            MessageBox.Show("Eliminado exitosamente");
+            Cargar();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            ArticuloNegocio artNegocio = new ArticuloNegocio();
+
+            string textBuscado = txtBuscar.Text;
+            artNegocio.Buscar(textBuscado);
+
+            ListaArticulos = artNegocio.Buscar(textBuscado);
+
+            dgvArticulos.DataSource = ListaArticulos;
+
+            dgvArticulos.Columns["Imagen"].Visible = false;
+            dgvArticulos.Columns["ID"].Visible = false;
+
+            CargarImagen(ListaArticulos[0].Imagen);
+
+
+
         }
     }
 }
