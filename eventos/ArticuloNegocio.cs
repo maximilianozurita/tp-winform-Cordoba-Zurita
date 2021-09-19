@@ -72,7 +72,7 @@ namespace negocio
             try
             {
 				datos.SetearConsulta("insert into dbo.ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria,Precio,ImagenUrl) values('" + nuevo.CodigoArticulo + "', '" + nuevo.Nombre + "', ' " + nuevo.Descripcion + "', @idMarca , @IdCategoria,'"+nuevo.Precio+"',@ImagenUrl); ");
-			  datos.setearParametros("@IdMarca",nuevo.Marca.ID);
+				datos.setearParametros("@IdMarca",nuevo.Marca.ID);
 				datos.setearParametros("@IdCategoria", nuevo.Categoria.ID);
 				datos.setearParametros("@ImagenUrl", nuevo.Imagen);
 				datos.EjecutarAccion();
