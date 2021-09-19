@@ -244,7 +244,6 @@ namespace TPWinForm_Zurita_Cordoba
         private System.Windows.Forms.Button buttonAceptar;
         private System.Windows.Forms.ComboBox cboMarcas;
         private System.Windows.Forms.ComboBox cboCategoria;
-        private System.Windows.Forms.TextBox txtBUrlImagen;
-        private System.Windows.Forms.Label label1;
+       
     }
 }
