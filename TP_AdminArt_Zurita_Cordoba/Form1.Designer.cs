@@ -59,10 +59,13 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             // pBoxArticulo
             // 
+<<<<<<< HEAD
             this.pBoxArticulo.Location = new System.Drawing.Point(959, 0);
             this.pBoxArticulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
             this.pBoxArticulo.Location = new System.Drawing.Point(724, 106);
             this.pBoxArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> 70d44be49183d9e1d9551ca1376ae719f76e582d
             this.pBoxArticulo.Name = "pBoxArticulo";
             this.pBoxArticulo.Size = new System.Drawing.Size(681, 495);
             this.pBoxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -71,9 +74,12 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(90, 526);
+<<<<<<< HEAD
             this.BtnAgregar.Location = new System.Drawing.Point(64, 521);
             this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.BtnAgregar.Location = new System.Drawing.Point(90, 526);
+>>>>>>> 70d44be49183d9e1d9551ca1376ae719f76e582d
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(100, 28);
             this.BtnAgregar.TabIndex = 2;
@@ -83,10 +89,13 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             // btnModificar
             // 
+<<<<<<< HEAD
             this.btnModificar.Location = new System.Drawing.Point(368, 523);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
             this.btnModificar.Location = new System.Drawing.Point(315, 530);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> 70d44be49183d9e1d9551ca1376ae719f76e582d
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(117, 23);
             this.btnModificar.TabIndex = 3;
@@ -96,9 +105,12 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             // brnEliminar
             // 
+<<<<<<< HEAD
             this.brnEliminar.Location = new System.Drawing.Point(687, 523);
             this.brnEliminar.Margin = new System.Windows.Forms.Padding(4);
+=======
             this.brnEliminar.Location = new System.Drawing.Point(520, 530);
+>>>>>>> 70d44be49183d9e1d9551ca1376ae719f76e582d
             this.brnEliminar.Name = "brnEliminar";
             this.brnEliminar.Size = new System.Drawing.Size(100, 28);
             this.brnEliminar.TabIndex = 4;
@@ -127,17 +139,23 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
+            this.ClientSize = new System.Drawing.Size(1776, 567);
+=======
             this.ClientSize = new System.Drawing.Size(1332, 563);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
-            this.ClientSize = new System.Drawing.Size(1776, 567);
+>>>>>>> 70d44be49183d9e1d9551ca1376ae719f76e582d
             this.Controls.Add(this.brnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.pBoxArticulo);
             this.Controls.Add(this.dgvArticulos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> 70d44be49183d9e1d9551ca1376ae719f76e582d
             this.Name = "Form1Articulos";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1Articulos_Load);
