@@ -98,5 +98,26 @@ namespace TP_AdminArt_Zurita_Cordoba
             MessageBox.Show("Eliminado exitosamente");
             Cargar();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            ArticuloNegocio artNegocio = new ArticuloNegocio();
+
+            string textBuscado = txtBuscar.Text;
+            artNegocio.Buscar(textBuscado);
+
+            ListaArticulos = artNegocio.Buscar(textBuscado);
+
+            dgvArticulos.DataSource = ListaArticulos;
+
+            dgvArticulos.Columns["Imagen"].Visible = false;
+            dgvArticulos.Columns["ID"].Visible = false;
+
+            CargarImagen(ListaArticulos[0].Imagen);
+
+
+
+        }
     }
 }
