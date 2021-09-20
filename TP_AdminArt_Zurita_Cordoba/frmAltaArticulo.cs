@@ -35,13 +35,13 @@ namespace TPWinForm_Zurita_Cordoba
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio artNegocio = new ArticuloNegocio();
-
+           
             try
             {
                 if (art == null)
-                {
-                    Articulo art = new Articulo();
-                }
+                
+               art = new Articulo();
+              
                 art.Nombre = txtNombre.Text;
                 art.CodigoArticulo = txtCodigo.Text;
                 art.Descripcion = txtDescripcion.Text;
@@ -49,10 +49,10 @@ namespace TPWinForm_Zurita_Cordoba
                 art.Marca = (Marca)cboMarcas.SelectedItem;
                 art.Categoria = (Categoria)cboCategoria.SelectedItem;
                 art.Precio = (float) decimal.Parse(txtPrecio.Text);
-                
-                
-                if (art.ID != 0)
+              
+                 if (art.ID != 0)
                 {
+
                     artNegocio.Modificar(art);
                     MessageBox.Show("Modificado exitosamente");
                 }
@@ -60,7 +60,10 @@ namespace TPWinForm_Zurita_Cordoba
                 {
                     artNegocio.Agregar(art);
                     MessageBox.Show("Agregado exitosamente");
+
                 }
+
+
                 Close();
 
             }
@@ -88,10 +91,11 @@ namespace TPWinForm_Zurita_Cordoba
                 if (art != null)
                 {
                     txtDescripcion.Text = art.Descripcion;
-                    txtNombre.Text= art.Nombre;
+                    txtNombre.Text = art.Nombre;
                     txtDescripcion.Text = art.Descripcion;
                     txtBUrlImagen.Text = art.Imagen;
                     CargarImagen(art.Imagen);
+                    txtCodigo.Text= art.CodigoArticulo;                  
                     txtPrecio.Text = art.Precio.ToString();
                     cboMarcas.SelectedValue = art.Marca.ID;
                     cboCategoria.SelectedValue = art.Categoria.ID;

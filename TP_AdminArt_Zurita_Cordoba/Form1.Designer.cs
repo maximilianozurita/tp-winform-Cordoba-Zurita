@@ -36,6 +36,8 @@ namespace TP_AdminArt_Zurita_Cordoba
             this.brnEliminar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnBusqueda = new System.Windows.Forms.Button();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -44,52 +46,34 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvArticulos.Location = new System.Drawing.Point(22, 83);
+            this.dgvArticulos.Location = new System.Drawing.Point(32, 121);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvArticulos.Location = new System.Drawing.Point(0, 0);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvArticulos.Location = new System.Drawing.Point(9, 106);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.RowTemplate.Height = 24;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(678, 360);
-            this.dgvArticulos.Size = new System.Drawing.Size(939, 495);
+            this.dgvArticulos.Size = new System.Drawing.Size(755, 360);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // pBoxArticulo
             // 
-<<<<<<< HEAD
-            this.pBoxArticulo.Location = new System.Drawing.Point(959, 0);
-            this.pBoxArticulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-=======
-            this.pBoxArticulo.Location = new System.Drawing.Point(724, 106);
-            this.pBoxArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
->>>>>>> 70d44be49183d9e1d9551ca1376ae719f76e582d
-            this.pBoxArticulo.Location = new System.Drawing.Point(705, 83);
+            this.pBoxArticulo.Location = new System.Drawing.Point(805, 121);
             this.pBoxArticulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pBoxArticulo.Name = "pBoxArticulo";
-            this.pBoxArticulo.Size = new System.Drawing.Size(681, 495);
-            this.pBoxArticulo.Size = new System.Drawing.Size(492, 360);
+            this.pBoxArticulo.Size = new System.Drawing.Size(342, 360);
             this.pBoxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBoxArticulo.TabIndex = 1;
             this.pBoxArticulo.TabStop = false;
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(64, 521);
+            this.BtnAgregar.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.Location = new System.Drawing.Point(32, 511);
             this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4);
-<<<<<<< HEAD
-            this.BtnAgregar.Location = new System.Drawing.Point(64, 521);
-            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4);
-=======
-            this.BtnAgregar.Location = new System.Drawing.Point(90, 526);
->>>>>>> 70d44be49183d9e1d9551ca1376ae719f76e582d
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(100, 28);
+            this.BtnAgregar.Size = new System.Drawing.Size(115, 37);
             this.BtnAgregar.TabIndex = 2;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
@@ -97,17 +81,11 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(368, 523);
+            this.btnModificar.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(340, 511);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-<<<<<<< HEAD
-            this.btnModificar.Location = new System.Drawing.Point(368, 523);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-=======
-            this.btnModificar.Location = new System.Drawing.Point(315, 530);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
->>>>>>> 70d44be49183d9e1d9551ca1376ae719f76e582d
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(117, 23);
+            this.btnModificar.Size = new System.Drawing.Size(117, 35);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modifcar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -115,45 +93,16 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             // brnEliminar
             // 
-<<<<<<< HEAD
-            this.brnEliminar.Location = new System.Drawing.Point(687, 523);
-            this.brnEliminar.Margin = new System.Windows.Forms.Padding(4);
-=======
-            this.brnEliminar.Location = new System.Drawing.Point(520, 530);
->>>>>>> 70d44be49183d9e1d9551ca1376ae719f76e582d
-            this.brnEliminar.Name = "brnEliminar";
-            this.brnEliminar.Size = new System.Drawing.Size(100, 28);
-            this.brnEliminar.TabIndex = 4;
-            this.brnEliminar.Text = "Eliminar";
-            this.brnEliminar.UseVisualStyleBackColor = true;
-            this.brnEliminar.Click += new System.EventHandler(this.brnEliminar_Click);
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(139, 55);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(498, 20);
-            this.txtBuscar.TabIndex = 6;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(669, 55);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 7;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // brnEliminar
-            // 
-            this.brnEliminar.Location = new System.Drawing.Point(687, 523);
+            this.brnEliminar.BackColor = System.Drawing.Color.White;
+            this.brnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.brnEliminar.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brnEliminar.Location = new System.Drawing.Point(663, 513);
             this.brnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.brnEliminar.Name = "brnEliminar";
-            this.brnEliminar.Size = new System.Drawing.Size(100, 28);
+            this.brnEliminar.Size = new System.Drawing.Size(124, 35);
             this.brnEliminar.TabIndex = 4;
             this.brnEliminar.Text = "Eliminar";
-            this.brnEliminar.UseVisualStyleBackColor = true;
+            this.brnEliminar.UseVisualStyleBackColor = false;
             this.brnEliminar.Click += new System.EventHandler(this.brnEliminar_Click);
             // 
             // txtBuscar
@@ -165,40 +114,46 @@ namespace TP_AdminArt_Zurita_Cordoba
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(669, 55);
+            this.btnBuscar.Location = new System.Drawing.Point(0, 0);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 7;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnBuscar.TabIndex = 0;
+            // 
+            // btnBusqueda
+            // 
+            this.btnBusqueda.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBusqueda.Location = new System.Drawing.Point(576, 58);
+            this.btnBusqueda.Name = "btnBusqueda";
+            this.btnBusqueda.Size = new System.Drawing.Size(130, 22);
+            this.btnBusqueda.TabIndex = 5;
+            this.btnBusqueda.Text = "Buscar";
+            this.btnBusqueda.UseVisualStyleBackColor = true;
+            this.btnBusqueda.Click += new System.EventHandler(this.btnBusqueda_Click);
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(60, 58);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(477, 22);
+            this.txtBusqueda.TabIndex = 6;
             // 
             // Form1Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1776, 567);
-            this.Controls.Add(this.brnEliminar);
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1776, 567);
-=======
-            this.ClientSize = new System.Drawing.Size(1332, 563);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtBuscar);
->>>>>>> 70d44be49183d9e1d9551ca1376ae719f76e582d
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(1153, 567);
+            this.Controls.Add(this.txtBusqueda);
+            this.Controls.Add(this.btnBusqueda);
             this.Controls.Add(this.brnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.pBoxArticulo);
             this.Controls.Add(this.dgvArticulos);
-<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-=======
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> 70d44be49183d9e1d9551ca1376ae719f76e582d
             this.Name = "Form1Articulos";
-            this.Text = "Form1";
+            this.Text = "CATALOGO";
             this.Load += new System.EventHandler(this.Form1Articulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxArticulo)).EndInit();
@@ -216,6 +171,8 @@ namespace TP_AdminArt_Zurita_Cordoba
         private System.Windows.Forms.Button brnEliminar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnBusqueda;
+        private System.Windows.Forms.TextBox txtBusqueda;
     }
 }
 

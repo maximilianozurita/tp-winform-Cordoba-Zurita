@@ -38,23 +38,7 @@ namespace TP_AdminArt_Zurita_Cordoba
         private void Cargar()
         {
             ArticuloNegocio evento = new ArticuloNegocio();
-            try
-            {
-                ListaArticulos = evento.listar();
-
-                dgvArticulos.DataSource = ListaArticulos;
-
-                dgvArticulos.Columns["Imagen"].Visible = false;
-                dgvArticulos.Columns["ID"].Visible = false;
-
-                CargarImagen(ListaArticulos[0].Imagen);
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.ToString());
-            }
+            MostrarDatos(evento.listar());
         }
 
         private void CargarImagen(string Imagen) 
@@ -99,25 +83,34 @@ namespace TP_AdminArt_Zurita_Cordoba
             Cargar();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
 
+        private void btnBusqueda_Click(object sender, EventArgs e)
+        {
             ArticuloNegocio artNegocio = new ArticuloNegocio();
 
-            string textBuscado = txtBuscar.Text;
-            artNegocio.Buscar(textBuscado);
+            string textBuscado = txtBusqueda.Text;
+            if (textBuscado != "") { MostrarDatos(artNegocio.Buscar(textBuscado)); }
+            else { MostrarDatos(artNegocio.listar()); }
+        }
+        public void MostrarDatos(List<Articulo> producto)
+        {
+            try
+            {
+                ListaArticulos = producto;
 
-            ListaArticulos = artNegocio.Buscar(textBuscado);
+                dgvArticulos.DataSource = ListaArticulos;
 
-            dgvArticulos.DataSource = ListaArticulos;
+                dgvArticulos.Columns["Imagen"].Visible = false;
+                dgvArticulos.Columns["ID"].Visible = false;
 
-            dgvArticulos.Columns["Imagen"].Visible = false;
-            dgvArticulos.Columns["ID"].Visible = false;
+                CargarImagen(ListaArticulos[0].Imagen);
 
-            CargarImagen(ListaArticulos[0].Imagen);
+            }
+            catch (Exception ex)
+            {
 
-
-
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
